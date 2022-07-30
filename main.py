@@ -12,7 +12,6 @@ def main():
 
     print(X)
 
-
     # fig = plt.figure(figsize=(8, 6))
     fig, ax = plt.subplots()
 
@@ -24,12 +23,8 @@ def main():
     plt.pcolormesh(X_flipped, cmap="pink_r")
     plt.title("Plot 2D array")
     plt.colorbar()
-    plt.show()
-    fig.tight_layout()
-
     plt.savefig('fp.png')
-
-
+    plt.show()
 
 
 def print_2d_array(array):
