@@ -1,10 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
+
 MAX_SIZE = 40
 
+
 def main():
-    array, name = load_array()
+    array, name = load_array(1)
     # print_2d_array(array)
 
     X = np.array(array)
@@ -12,7 +14,7 @@ def main():
     if (len(array)) < MAX_SIZE:
         fig, ax = plt.subplots()
     else:
-        fig, ax = plt.subplots(figsize=(20, 20))
+        fig, ax = plt.subplots(figsize=(15, 15))
 
     im, cbar = heatmap(X, cmap="bone_r")
 
@@ -35,7 +37,7 @@ def print_2d_array(array):
                      for row in array]))
 
 
-def load_array():
+def load_array(num=0):
     """
     Loads a 2d array of ints and returns it
     :return: A 2d array containing ints
@@ -43,8 +45,10 @@ def load_array():
     five_by_five = "5x5.txt"
     eighty_by_eighty = "p081_matrix.txt"
 
-    name = five_by_five
-    # name = eighty_by_eighty
+    if num == 1:
+        name = five_by_five
+    else:
+        name = eighty_by_eighty
 
     file = open(name)
 
